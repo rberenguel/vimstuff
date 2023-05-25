@@ -70,8 +70,8 @@ set complete=k,.
 
 "set dictionary=~/misc/english-words.95
 let s:path = expand('<sfile>:p:h')
-let s:p5 = 'vimstuff/d/p5'
-let s:glsl = s:path . '/d/glsl'
+let s:p5 = 'v/d/p5'
+let s:glsl = 'v/d/glsl'
 
 autocmd FileType javascript let &l:dictionary = s:p5
 autocmd FileType glsl let &l:dictionary = s:glsl
@@ -94,8 +94,6 @@ set completeopt+=noselect
 set completeopt+=noinsert
 set completeopt-=preview
 
-"set completeopt=menu,menuone,noinsert
-"inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 autocmd InsertCharPre * call AutoComplete()
 fun! AutoComplete()
     if v:char =~ '\K'
