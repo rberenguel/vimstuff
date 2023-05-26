@@ -56,11 +56,16 @@ let g:goyo_width = 60
 let g:indent_guides_enable_on_vim_startup = 1
 let g:rainbow#max_level = 16
 
-augroup rainbows
-  autocmd!
-  autocmd FileType * RainbowParentheses
-augroup END
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
+"augroup rainbows
+"  autocmd!
+"  autocmd FileType * RainbowParenthesesActivate
+"augroup END
+"
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight! | AirlineRefresh
 nmap <C-g> :Goyo 60<CR>
