@@ -23,6 +23,12 @@ set ruler
 set history=100
 set autoindent
 
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
 colorscheme PaperColor "solarized cyberduck ayu
 
 " Quickly start a server on the iPad
