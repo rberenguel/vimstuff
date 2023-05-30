@@ -31,6 +31,8 @@ set ttyfast
 
 colorscheme PaperColor "solarized cyberduck ayu
 
+nnoremap ` :UndotreeToggle<CR>
+
 " Quickly start a server on the iPad
 nnoremap Q :! open http://127.0.0.1:8000 ; python3 -m http.server<CR>
 nnoremap q :! python3 -m http.server<CR>
@@ -86,15 +88,6 @@ let s:glsl = 'v/d/glsl'
 
 autocmd FileType javascript let &l:dictionary = s:p5
 autocmd FileType glsl let &l:dictionary = s:glsl
-
-let g:mucomplete#chains = {}
-
-let g:mucomplete#msg#methods = {
-	    \ 'dict': 'foo'
-	    \ }
-
-let g:mucomplete#chains = {}
-let g:mucomplete#chains.javascript = ['dict']
 
 " Minimalist-AutoCompletePop-Plugin
 
