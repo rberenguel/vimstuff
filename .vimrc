@@ -1,4 +1,6 @@
-autocmd VimEnter * call ForceWorkingFont()
+if hostname() !~# "Mac-mini"
+  autocmd VimEnter * call ForceWorkingFont()
+endif
 autocmd BufEnter *.txt if &filetype == 'help' | wincmd T | endif
 
 set tabstop=2       " The width of a TAB is set to 4.
