@@ -31,8 +31,12 @@ set ttimeout
 set ttimeoutlen=1
 set ttyfast
 
-colorscheme PaperColor "solarized cyberduck ayu
-
+syntax on
+if hostname() !~# "Mac-mini"
+  colorscheme PaperColor "solarized cyberduck ayu
+else
+  highlight Normal guibg=black
+endif
 nnoremap ` :UndotreeToggle<CR>
 
 " Quickly start a server on the iPad
