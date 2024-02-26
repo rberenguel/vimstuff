@@ -3,6 +3,8 @@ if hostname() !~# "Mac-mini"
 endif
 autocmd BufEnter *.txt if &filetype == 'help' | wincmd T | endif
 
+set backspace=indent,eol,start
+
 set tabstop=2       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
