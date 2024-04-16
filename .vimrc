@@ -41,10 +41,6 @@ else
 endif
 nnoremap ` :UndotreeToggle<CR>
 
-" Quickly start a server on the iPad
-nnoremap Q :! open http://127.0.0.1:8000 ; python3 -m http.server<CR>
-nnoremap q :! python3 -m http.server<CR>
-
 " Window management plugins
 let g:win_ext_command_map = {"\<cr>": 'Win#exit'}
 nmap <C-Return> <Plug>DWMFocus
