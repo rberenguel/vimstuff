@@ -49,7 +49,8 @@ nmap <C-h> <Plug>DWMShrinkMaster
 
 " Buffer and window jumping
 let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_map = '<c-p>'
+nnoremap <c-k> :CtrlPBuffer<Cr>
+let g:ctrlp_map = '<c-k>'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap <Leader>t :CtrlPBuffer<Cr>
 let g:ctrlp_prompt_mappings = {
