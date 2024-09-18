@@ -88,7 +88,7 @@ au Syntax * RainbowParenthesesLoadBraces
 "
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight! | AirlineRefresh
-nmap <C-g> :Goyo 60<CR>
+nmap <C-g> :Goyo<CR>
 
 """" Completion stuff
 set complete=k,.
