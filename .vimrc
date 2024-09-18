@@ -14,8 +14,10 @@ set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 function ForceWorkingFont()
-    ifont set 'Victor Mono' -s 20
+    ifont set 'GoMono Nerd Font' -s 16
 endfunction
+
+command! ForceWorkingFont call ForceWorkingFont()
 
 set number relativenumber
 set splitbelow
@@ -67,16 +69,31 @@ ca tl tabn
 let mapleader = "\<Space>" 
 
 " Visual niceties
-set background=dark
 set termguicolors     " enable true colors support
+set background=dark
 let ayucolor="dark"   " for dark version of theme
+
+function Dark()
+  set background=dark
+  let ayucolor="dark"   " for dark version of theme
+endfunction
+
+command! Light call Light()
+
+function Light()
+  set background=light
+  let ayucolor="light"   " for dark version of theme
+endfunction
+
+command! Dark call Dark()
+
 let g:airline_powerline_fonts = 1
 let g:limelight_conceal_guifg = '#555555'
 let g:goyo_width = 60
 let g:indent_guides_enable_on_vim_startup = 1
 let g:rainbow#max_level = 16
 
-au VimEnter * RainbowParenthesesToggle
+" au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
@@ -86,8 +103,16 @@ au Syntax * RainbowParenthesesLoadBraces
 "  autocmd FileType * RainbowParenthesesActivate
 "augroup END
 "
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight! | AirlineRefresh
+
+
+function Underwood()
+    ifont set 'My Underwood' -s 18
+endfunction
+
+command! Underwood call Underwood()
+
+autocmd! User GoyoEnter Limelight | Underwood
+autocmd! User GoyoLeave Limelight! | AirlineRefresh | ForceWorkingFont
 nmap <C-g> :Goyo 60<CR>
 
 """" Completion stuff
